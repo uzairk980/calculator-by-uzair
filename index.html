@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="download.jpg">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(113, 124, 124);
+        min-height: 120vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .calculator{
+        display: grid;
+        width: 450px;
+        height: 640px;
+        background-color: rgb(210, 198, 232);
+        border-radius: 20px;
+        padding: 40px;
+    
+    }
+    span{
+        background-color: rgb(185, 178, 178);
+         border-radius: 100px; 
+        background-size: 5%;
+        cursor: pointer;
+        font-size: 50px;
+        padding-righT: 29px;
+        padding-left: 16px;
+        padding-top: 10px;
+        /* padding-bottom: 3px; */
+        margin-bottom: 0px;
+        font-weight: 800;
+        font-family: Georgia,;
+        /* block-size: 30px; */
+        margin: 4px;
+        
+    }
+    
+    
+    
+    #value{
+        background-color: rgb(58, 54, 54);
+        color: rgb(243, 242, 242);
+        height: 70px;
+        font-size: 60px;
+        margin-bottom: 30px;
+    }
+    h1{
+        font: bold;
+        font-size: 50px;
+        text-align: center;
+        
+    }
+   
+    
+
+</style>
+<body>
+    
+    <div class="calculator">
+        <div class="buttons">
+            <h1> CALCULATOR </h1>
+            <h1 id="value"></h1>
+            <span class="clear">Clear</span>
+            <span>-+</span>
+            <span>-</span><br><br>
+
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>*</span><br><br>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span class="plus">+</span><br><br>
+             <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>/</span><br><br>
+           
+            <span>0</span>
+            <span>00</span>
+            <span>.</span>
+            
+            <span class="equal">=</span>
+        </div>
+    </div>
+    <script>
+        let  button=document.querySelectorAll('.buttons');
+       let btn=document.querySelectorAll('span');
+        let value = document.getElementById('value');
+
+        for (let i=0; i < btn.length; i++){
+            btn [i].addEventListener('click',function(){
+                if (this.innerHTML == "=") {
+                    value.innerHTML = eval(value.innerHTML);
+                }
+                else{
+                    if(this.innerHTML == 'Clear'){
+                        value.innerHTML = "";
+                    } else{
+                        value.innerHTML += this.innerHTML;
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>
